@@ -3,13 +3,16 @@ const {
     getAppointment, 
     postAppointment, 
     putAppointment, 
-    deleteAppointment } = require('../controllers/appointments.controllers');
+    deleteAppointment, 
+    checkAppointmentExistence} = require('../controllers/appointments.controllers');
 const { check } = require('express-validator');
 const { validate } = require('../middlewares/validators');
 const { checkAppointment, checkExistence } = require('../helpers/validators');
 const router = Router();
 
 router.get('/', getAppointment);
+
+router.get('/exist', checkAppointmentExistence);
 
 router.post('/',
 [

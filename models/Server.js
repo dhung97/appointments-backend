@@ -24,7 +24,7 @@ class Server{
     }
 
     routes(){
-        this.server.use('/appointments/', require('../routes/appointments.routes'));
+        this.server.use('/appointments', require('../routes/appointments.routes'));
     }
 
     listen(){
